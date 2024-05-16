@@ -2,15 +2,15 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import brandLogo from 'C:/Users/Admin/Downloads/EEG/BrainMotorImaginary/public/g8.png';
-import signInLogo from 'C:/Users/Admin/Downloads/EEG/BrainMotorImaginary/public/Frame 179.png';
+import logo from '../../public/g8.png';
+import signInLogo from '../../public/Frame 179.png';
 
 function NavScrollExample() {
     return (
         <Navbar expand="lg" className="bg-white">
             <Container fluid>
                 <Navbar.Brand href="#">
-                    <img src={brandLogo} alt="Brand Logo" height="30" className="me-2" /> {/* Added Logo */}
+                    <img src={logo} alt="Brand Logo" height="30" className="me-2" /> {/* Added Logo */}
                     Luminous
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
