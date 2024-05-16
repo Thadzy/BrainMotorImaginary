@@ -2,6 +2,7 @@ import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Hero from './components/Hero';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <>
     <div>
       <Hero />
+      <Footer />
     </div>
     </>
   )
