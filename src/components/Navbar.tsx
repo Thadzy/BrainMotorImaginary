@@ -1,4 +1,3 @@
-import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -11,7 +10,7 @@ function NavScrollExample() {
             <Container fluid>
                 <Navbar.Brand href="#">
                     <img src={logo} alt="Brand Logo" height="30" className="me-2" /> {/* Added Logo */}
-                    Luminous
+                    Luminos
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
