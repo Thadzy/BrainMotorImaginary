@@ -3,8 +3,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../../public/g8.png';
 import signInLogo from '../../public/Frame 179.png';
+import { useLocation } from 'react-router-dom';
 
 function NavScrollExample() {
+    const location = useLocation();
+    const isSignInPage = location.pathname === '/signin';
+    
     return (
         <Navbar expand="lg" className="bg-white">
             <Container fluid>
@@ -19,15 +23,18 @@ function NavScrollExample() {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link href="#action1">Home</Nav.Link>
+                        <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="#action2">About</Nav.Link>
-                        <Nav.Link href="#action2">Service</Nav.Link>
+                        <Nav.Link href="#action2">Services</Nav.Link>
                         <Nav.Link href="#action2">Page</Nav.Link>
-                        {/* Added Sign In Logo */}
                         <Nav.Link href="#">
-                            <img src={signInLogo} alt="Sign In" height="30" />
+                                <img src={signInLogo} alt="Sign In" height="30" />
                         </Nav.Link>
-                        <Nav.Link href="#action2">Sign in</Nav.Link>
+                        {!isSignInPage && (
+                        <Nav.Link href="/signin" style={{ visibility: isSignInPage ? 'hidden' : 'visible' }}>
+                            Sign in
+                        </Nav.Link>
+                        )}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
@@ -36,3 +43,4 @@ function NavScrollExample() {
 }
 
 export default NavScrollExample;
+
