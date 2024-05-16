@@ -5,6 +5,7 @@ import App from './App';
 import { UserProvider } from './components/UserContext';
 import SignIn from './components/SignIn';
 import Navbar from './components/Navbar';
+import QuestionnaireList from './components/QuestionnaireList';
 
 const rootElement = document.getElementById('root');
 if (rootElement) {
@@ -15,8 +16,9 @@ if (rootElement) {
         <UserProvider>
           <Navbar />
           <Routes>
-            <Route path="/signin" element={<SignIn />} />
             <Route path="/" element={<App />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/questionnaires" element={<QuestionnaireList />}/>
           </Routes>
         </UserProvider>
       </BrowserRouter>
