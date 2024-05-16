@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import UserContext from './UserContext';
 
 function SignIn() {
@@ -6,6 +7,7 @@ function SignIn() {
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('');
   const [user, setUser] = useContext(UserContext);
+  const navigate = useNavigate();
 
   if (!setUser) {
     throw new Error("setUser is undefined");
@@ -24,27 +26,34 @@ function SignIn() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    const response = await fetch('/api/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email,
-        password,
-        role,
-      }),
+    setUser({
+      name: 'John',
+      surname: 'Doe',
+      email, 
+      password,
+      role,
     });
+    navigate('/questionnaires');
+    // const response = await fetch('/api/login', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     email,
+    //     password,
+    //     role,
+    //   }),
+    // });
 
-    if (response.ok) {
-      const userData = await response.json();
-      setUser(userData);
-      console.log('Login successful');
-    } else {
-      console.log('Login failed');
-    }
+    // if (response.ok) {
+    //   const userData = await response.json();
+    //   setUser(userData);
+    //   console.log('Login successful');
+    //   history.push('/questionnaires'); // navigate to QuestionnaireList page
+    // } else {
+    //   console.log('Login failed');
+    // }
   };
 
   return (

@@ -1,5 +1,4 @@
 import Container from 'react-bootstrap/Container';
-import { Button } from 'reactstrap'; // Assuming you're using reactstrap
 import Image from 'react-bootstrap/Image';
 
 function Hero() {
