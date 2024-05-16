@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import MyNavbar from './components/Navbar';
 import Hero from './components/Hero';
 
 
@@ -11,7 +10,6 @@ function App() {
   return (
     <>
     <div>
-      <MyNavbar />
       <Hero />
     </div>
     </>
