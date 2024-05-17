@@ -14,6 +14,7 @@ import CardList from "./CardList";
 import CircularProgress from "@mui/material/CircularProgress";
 
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Question() {
   const [state, setState] = useState(false);
@@ -31,15 +32,45 @@ function Question() {
   ];
 
   function wait_and_print(delay) {
-    setTimeout(function () {
-      setQuestion(question + 1);
-      console.log(question);
-      setLoading(false);
-      if (question >= 4) {
-        setState(true);
-      }
-    }, delay);
+    // setTimeout(function () {
+    //   setQuestion(question + 1);
+    //   console.log(question);
+    //   setLoading(false);
+    //   if (question >= 4) {
+    //     setState(true);
+    //   }
+    // }, delay);
   }
+
+  const handleSubmit = async () => {
+    // const response = await fetch(
+    //   "http://192.168.181.65:8000/answer?SID=100001&QID=101",
+    //   {
+    //     method: "GET",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //   }
+    // );
+    try {
+      const response = await axios.get(
+        `http://192.168.181.65:8000/answer?SID=100001&QID=101`
+      );
+      //console.log(response);
+      setQuestion(question + 1);
+      setLoading(false);
+    } catch (error) {
+      //console.log("1122", error);
+    }
+    // if (response.ok) {
+    //   setQuestion(question + 1);
+    //   setLoading(false);
+    //   console.log("1111", loading);
+    // }
+    if (question >= 4) {
+      setState(true);
+    }
+  };
 
   return (
     <div
@@ -72,7 +103,8 @@ function Question() {
                       variant="contained"
                       onClick={async () => {
                         await setLoading(true);
-                        await wait_and_print(3000);
+                        //await wait_and_print(3000);
+                        handleSubmit();
                       }}
                     >
                       Start
