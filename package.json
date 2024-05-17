@@ -16,6 +16,7 @@
     "@mui/material": "^5.15.18",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
+    "crypto-js": "^4.2.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
@@ -23,6 +24,7 @@
     "reactstrap": "^9.2.2"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",

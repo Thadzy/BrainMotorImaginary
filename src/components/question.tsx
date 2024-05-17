@@ -131,6 +131,13 @@ function Question() {
               <div className="font-header">Your response has been recorded</div>
             </Grid>
             <Grid item>
+              [150, 110, 150, 150, 110, 150, 110, 120, 120, 150, 110, 110, 110,
+              150, 150, 150, 110, 150, 110, 110, 150, 150, 150, 110, 120, 110,
+              150, 120, 110, 120, 110, 110, 150, 120, 120, 110, 150, 110, 120,
+              150, 150, 120, 150, 150, 110, 110, 110, 110, 120, 150, 120, 110,
+              120, 150, 110, 110, 120, 110, 120, 110]
+            </Grid>
+            <Grid item>
               <Button component={Link} to="/questionnaires" variant="outlined">
                 Back to Questionaire
               </Button>

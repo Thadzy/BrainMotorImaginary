@@ -12,7 +12,7 @@ import CardList from "./CardList";
 function QuestionnaireList() {
   const [user, setUser] = useContext(UserContext);
 
-  if (user) {
+  if (true) {
     return (
       <div
         style={{
@@ -25,7 +25,7 @@ function QuestionnaireList() {
         <Container>
           <h2>Welcome, {user && user.name}!</h2>
           {/* {user && user.role === "teacher" ? ( */}
-          {user && user.role === "teacher" ? (
+          {user && user.role == "2" ? (
             <div style={{ paddingTop: "32px" }}>
               <LogList
                 img_path="profile.png"
