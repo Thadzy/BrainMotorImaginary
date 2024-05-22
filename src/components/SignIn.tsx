@@ -29,16 +29,16 @@ function SignIn() {
 
   const handleRoleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setRole(e.target.value);
-    console.log(role);
+    //console.log(role);
   };
   const handleSubmit = async (e) => {
-    navigate("/questionnaires");
+    // navigate("/questionnaires");
     e.preventDefault();
     try {
       const response = await axios.get(
-        `http://192.168.181.65:8000/login?username=${email}&password=${password.toString()}&role=${role}`
+        `http://192.168.181.65:8000/login?username=${email}&password=${hashedPassword.toString()}&role=${role}`
       );
-      console.log("4444", "Login successful", response.data);
+      //console.log("4444", "Login successful", response.data);
       navigate("/questionnaires");
       if (response.data.success) {
         // Navigate to the desired page after successful login
@@ -48,7 +48,7 @@ function SignIn() {
         // Display error message or handle failed login
       }
     } catch (error) {
-      console.log("1122", error);
+      //console.log("1122", error);
     }
     // setUser({
     //   name: "John",
